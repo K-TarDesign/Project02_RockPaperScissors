@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // Variables
+        const playerName = prompt("What is your name?");
+        let computerScore = 0;
+        let playerScore = 0;
+        let round = 1;
+
+
+        let playerInput = prompt("Select one of the following: Rock, Paper, or Scissors?");
+        let playerSelect = playerInput.toLowerCase();
+        let computerSelect = computerSelector();
+
+        console.log(computerSelect);
+
+
+        //Functions
+
+        function computerSelector() {
+            let options = ['rock','paper','scissors'];
+            let computerResult = options[Math.floor(Math.random() * options.length)];
+            return computerResult;
+        }
+
+        function compareResults() {
+
+
+        }
+
+        function score() {
+
+            return `The score is
+
+            Computer: ${computerScore}
+            ${playerName}: ${playerScore}`;
+        }
+
+        function message() {
+            round++
+            if(round < 4) {
+
+                return `Okay! Let's play again! Time for round ${round}!`;
+            } else if(round === 4) {
+                return "Final round!";
+            }
+
+
+        }
+
+        //Results
+
+        console.log(score());
+        console.log(message());
+
+    </script>
+</body>
+</html>
