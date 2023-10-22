@@ -2,18 +2,37 @@ The goal of this code is to create a rock, paper, scissors game, located and pla
 
 SET-UP THE GAME 
 Define User Name
+Welcome user
+Create a scoreboard
 Determine User Choice
 Determine Computer Choice
-Summarize the rules
-Create a scoreboard
 
 RUN THE GAME 
-Compare Choices
-Announce choices
+Compare choices
+Announce the winner
 Increment the score
+Increment the round
 
 SHARE THE RESULTS
 Announce Winner
 Show scoreboard
 Announce next round number
 Start next round or End the set
+
+LIST OF VARIABLES:
+userName
+promptUserSelection
+userSelection 
+computerSelection
+userScore
+computerScore
+gameRound
+
+LIST OF FUNCTIONS:
+welcomeUser
+userSelector
+computerSelector
+
+
+FUNCTION CALLS:
+
