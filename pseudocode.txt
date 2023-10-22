@@ -1,0 +1,19 @@
+The goal of this code is to create a rock, paper, scissors game, located and played in the console only.
+
+SET-UP THE GAME 
+Define User Name
+Determine User Choice
+Determine Computer Choice
+Summarize the rules
+Create a scoreboard
+
+RUN THE GAME 
+Compare Choices
+Announce choices
+Increment the score
+
+SHARE THE RESULTS
+Announce Winner
+Show scoreboard
+Announce next round number
+Start next round or End the set
