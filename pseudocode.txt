@@ -2,7 +2,7 @@ The goal of this code is to create a rock, paper, scissors game, located and pla
 
 SET-UP THE GAME 
 Define User Name
-Welcome user
+Post rules
 Create a scoreboard
 Determine User Choice
 Determine Computer Choice
@@ -21,9 +21,9 @@ Start next round or End the set
 
 LIST OF VARIABLES:
 userName
-promptUserSelection
+promptUserSelect
 userSelection 
-computerSelection
+computerSelect
 userScore
 computerScore
 gameRound
@@ -32,7 +32,8 @@ LIST OF FUNCTIONS:
 welcomeUser
 userSelector
 computerSelector
-
+compareSelections
+playRound
 
 FUNCTION CALLS:
 
