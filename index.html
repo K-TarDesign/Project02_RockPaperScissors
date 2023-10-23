@@ -9,7 +9,7 @@
     
     <script>
         // VARIABLES
-            const userName = prompt("You're about to play Rock, Paper, Scissors. Please enter your name.");
+            const userName = prompt("You're about to play Rock, Paper, Scissors. Please enter your name.", "Jimmy");
 
             var gameRound = 1;
             var userScore = 0;
@@ -21,13 +21,30 @@
             var userSelect;
             var computerSelect;
 
+
         // FUNCTIONS
             function welcomeUser() {
-                console.log(`Welcome, ${userName}! You'll be playing a set of 5 rounds against the computer.`)
+                let welcome = `Welcome, ${userName}! You'll be playing a set of 5 rounds against the computer. `;
+                return welcome;
+            }
+
+            function scoreBoard() {
+                let score = `The current score is:
+                ${userName} = ${userScore}
+                Computer = ${computerScore}`;
+                return score;
             }
 
             function userSelector() {
-
+                let selection = prompt("Choose rock, paper, or scissors.")
+                userSelect = selection.toLocaleLowerCase()
+                    
+                    if (!(userSelect === "rock" || userSelect === "paper" || userSelect === "scissors")) {
+                        alert("Your answer is invalid. Please try again.");
+                        userSelector();
+                    } else {
+                        return userSelect;
+                    }
                 }
             
             function computerSelect() {
@@ -42,8 +59,10 @@
 
             }
 
+
         // ACTIONS
 
+            userSelector();
 
 
     </script>

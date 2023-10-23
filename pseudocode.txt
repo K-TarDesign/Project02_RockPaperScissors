@@ -19,7 +19,7 @@ Show scoreboard
 Announce next round number
 Start next round or End the set
 
-LIST OF VARIABLES:
+LIST OF GLOBAL VARIABLES:
 userName
 promptUserSelect
 userSelection 
