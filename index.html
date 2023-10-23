@@ -18,8 +18,8 @@
             ${userName}: ${userScore}
             Computer: ${computerScore}`;
 
-            var userSelect;
             var computerSelect;
+            var userSelect;
 
 
         // FUNCTIONS
@@ -39,7 +39,7 @@
                 let selection = prompt("Choose rock, paper, or scissors.")
                 userSelect = selection.toLocaleLowerCase()
                     
-                    if (!(userSelect === "rock" || userSelect === "paper" || userSelect === "scissors")) {
+                    if (!(userSelect === "rock" || userSelect === "paper" || userSelect === "scissors") || userSelect === null) {
                         alert("Your answer is invalid. Please try again.");
                         userSelector();
                     } else {
@@ -47,8 +47,10 @@
                     }
                 }
             
-            function computerSelect() {
-
+            function computerSelector() {
+                let options = ['rock', 'paper', 'scissors'];
+                computerSelect = options[Math.floor(Math.random() * options.length)];
+                return computerSelect;
             }
 
             function compareSelections() {
@@ -62,6 +64,7 @@
 
         // ACTIONS
 
+            computerSelector();
             userSelector();
 
 
