@@ -30,8 +30,8 @@ gameRound
 
 LIST OF FUNCTIONS:
 welcomeUser
-userSelector
-computerSelector
+getUserChoice
+getComputerChoice
 compareSelections
 playRound
 
