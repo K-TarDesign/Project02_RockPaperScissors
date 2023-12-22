@@ -53,6 +53,24 @@ h2 {
     color: beige;
 }
 
+.btn-play {
+    height: 75px;
+    width: 175px;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 24px;
+
+    background-color: black;
+    color: beige;
+}
+
+.option {
+    display: none;
+}
+
+.play-game {
+    display: block;
+}
 
 /* ID SETTINGS */
 #logo {
