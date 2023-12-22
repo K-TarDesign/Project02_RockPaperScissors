@@ -1,0 +1,153 @@
+/* GENERAL SETTINGS */
+body {
+    background-color: beige;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: arial, sans-serif;
+    max-height: 100vh;
+}
+
+p {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    margin: 0;
+    text-decoration: underline;
+}
+
+/* CLASS SETTING */
+.score {
+    font-size: 36px;
+    padding: 0 0 10px 0;
+
+}
+
+.round-info {
+    height: 150px;
+    width: 200px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.result {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 30px 0;
+    color: blue;
+}
+
+.btn-choice {
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 16px;
+
+    background-color: black;
+    color: beige;
+}
+
+
+/* ID SETTINGS */
+#logo {
+    font-weight: bold;
+    line-height: 0.25;
+}
+
+#instructions {
+    /* scroll options */
+    overflow: auto;
+}
+
+#screen-display {
+    height: 100vh;
+
+    /* Flexbox Properties */
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+#menu-column {
+    background-color: black;
+    color: beige;
+    padding: 15px;
+    
+
+    /* Flexbox Properties */
+    flex: 0 1 200px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#play-board {
+    
+    /* Flexbox Properties */
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#scoreboard {
+    padding: 0 0 15px 0;
+
+    /* Flex Properties */
+    column-gap:  50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#contestants {
+
+    /* Flex Properties */
+    gap: 30px;
+    flex: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#button-container {
+    padding: 15px;
+
+    /* Flexbox Properties */
+    align-self: stretch;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+    #screen-display {
+        flex-direction: column;
+    }
+
+    #menu-column {
+        flex-direction: row;
+        flex: 0 0 125px;
+        max-height: 125px;
+    }
+
+    #instructions {
+        padding: 0 0 0 30px;
+    }
+}

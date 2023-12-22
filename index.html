@@ -3,135 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">   
+    
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    
-    <script>
-        // VARIABLES
-            const userName = prompt("You're about to play Rock, Paper, Scissors. Please enter your name.", "Jimmy");
+    <div id="screen-display">
+        
+        <div id="menu-column">
+            <div id="logo">
+                <h1>ROCK</hi>
+                <h1>PAPER</h1>
+                <h1>SCISSORS</h1>
+            </div>
+            <div id="instructions">
+                <p>
+                Welcome to Rock, Paper, Scissors. 
+                During this game, you will play against the computer. 
+                The first to score 5 points wins!
+                </p>
+                <p>
+                Rules: 
+                Rock beats scissors. 
+                Paper beats rock. 
+                Scissors beat paper.
+                </p>
+            </div>
+        </div>
 
-            var gameRound = 1;
-            var userScore = 0;
-            var computerScore = 0;
+        <div id="play-board">
+            <div><h2>SCOREBOARD</h2></div>
+            <div id="scoreboard">
+                <div class="score" id="score-computer">0</div>
+                <div class="score" id="score-player">0</div>
+            </div>
 
-            var scoreBoard;
-            var computerSelect;
-            var userSelect;
+            <div id="contestants">
+                <div class="round-info" id="computer-ID">
+                    <h2>Computer</h2>
+                    <div class="result" id="computer-result">ROCK</div>
+                </div>
+                <div class="round-info" id="player-ID">
+                    <h2>Player</h2>
+                    <div class="result" id="player-result">ROCK</div>
+                </div>
+            </div>
 
+            <div id="button-container">
+                <div>
+                    <button class="btn-choice" id="btn-rock">
+                        ROCK
+                    </button>
+                </div>
+                <div>
+                    <button class="btn-choice" id="btn-paper">
+                        PAPER
+                    </button>
+                </div>
+                <div>
+                    <button class="btn-choice" id="btn-scissors">
+                        SCISSORS
+                    </button>
+                </div>
+            </div>
 
-        // FUNCTIONS
-            function welcomeUser() {
-                let welcome = `Welcome, ${userName}! You'll be playing a set of 5 rounds against the computer. `;
-                return welcome;
-            }
-
-            function score() {
-                return scoreBoard = `The score is:
-            ${userName}: ${userScore}
-            Computer: ${computerScore}`;
-            }
-
-            function getUserChoice() {
-                let selection = prompt("Choose rock, paper, or scissors.")
-                userSelect = selection.toLowerCase()
-                    
-                    if (!(userSelect === "rock" || userSelect === "paper" || userSelect === "scissors") || userSelect === null) {
-                        alert("Your answer is invalid. Please try again.");
-                        getUserChoice();
-                    } else {
-                        return userSelect;
-                    }
-                }
-            
-            function getComputerChoice() {
-                let options = ['rock', 'paper', 'scissors'];
-                computerSelect = options[Math.floor(Math.random() * options.length)];
-                return computerSelect;
-            }
-
-            // Switch Function
-            function compareSelections(player, computer) {
-                let message;
-                let result = `Round ${gameRound}: You chose ${player} and the computer chose ${computer}. `;
-
-                switch (player) {
-
-                    case computer:
-                        message = "It's a tie! No points awarded. ";
-                        break;
-
-                    case "rock":
-                        if (computer === "paper") {
-                            ++computerScore;
-                            message = "Paper beats rock! The computer wins! ";
-                        } else {
-                            ++userScore;
-                            message = "Rock beats scissors! You win! ";
-                        }
-                        break;
-
-                    case "paper":
-                        if (computer === "scissors") {
-                            ++computerScore;
-                            message = "Scissors beats paper! The computer wins! ";
-                        } else {
-                            ++userScore;
-                            message = "Paper beats rock! You win! ";
-                        }
-                        break;
-
-                    case "scissors":
-                        if (computer === "rock") {
-                            ++computerScore;
-                            message = "Rock beats scissors! The computer wins! ";
-                        } else {
-                            ++userScore;
-                            message = "Scissors beats paper! You win! ";
-                        }
-                        break;
-                }
-                
-                return result + message;
-            }
-
-            function gameOver(player, computer) {
-                let message = "Game Over! ";
-                let results;
-
-                    if (player === computer) {
-                        results = "It's a tie! No winners this time. "
-                    } else {
-                        (player < computer) ? 
-                            (results = "The computer wins! ") : 
-                            (results = "Congratualtions! You won the game!!! ");
-                    }
-                return message + results;
-            }
-            
-            function playRound() {
-                
-                if (gameRound < 5) {
-                    getComputerChoice();
-                    getUserChoice();
-                    alert(compareSelections(userSelect, computerSelect) + score());
-                    ++gameRound;
-                    playRound();
-                } else {
-                    getComputerChoice();
-                    getUserChoice();
-                    alert(compareSelections(userSelect, computerSelect));
-                    alert(gameOver(userScore, computerScore) + score());
-                }
-            }
-
-
-        // ACTIONS
-
-            alert(welcomeUser());
-            playRound();
-            
-
-    </script>
+        </div>
+    </div>
+<!-- <script src="main.js"></script> -->
 </body>
 </html>
