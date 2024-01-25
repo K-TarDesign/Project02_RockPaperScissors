@@ -10,7 +10,8 @@
 <body>
     <div id="screen-display">
         
-        <div id="menu-column">
+        <section id="menu">
+
             <div id="logo">
                 <h1>ROCK</hi>
                 <h1>PAPER</h1>
@@ -29,51 +30,52 @@
                 Scissors beat paper.
                 </p>
             </div>
-        </div>
 
-        <div id="play-board">
-            <div><h2>SCOREBOARD</h2></div>
-            <div id="scoreboard">
-                <div class="score" id="score-computer">0</div>
-                <div class="score" id="score-player">0</div>
+        </section>
+
+        <section id="play-board">
+
+            <div class="scoreboard">
+                    <div><h2>SCOREBOARD</h2></div>
+                <div id="scoreboard">
+                    <div id="score-tally">
+                        <div class="score-box">
+                            <h3>Computer</h3>
+                            <div class="score" id="score-computer">0</div>
+                        </div>
+                        <div class="score-box">
+                            <h3 class="player-name">Player</h3>
+                            <div class="score" id="score-player">0</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div id="contestants">
-                <div class="round-info">
-                    <h2>Computer</h2>
-                    <div class="result" id="computer-result">ROCK</div>
-                </div>
-                <div class="round-info">
-                    <h2>Player</h2>
-                    <div class="result" id="player-result">ROCK</div>
+            <div class="play">
+                <div id="contestants">
+                    <div class="round-info">
+                        <h2>Computer</h2>
+                        <div class="result" id="computer-result"></div>
+                    </div>
+                    <div class="round-info">
+                        <h2 class="player-name">Player</h2>
+                        <div class="result" id="player-result"></div>
+                    </div>
                 </div>
             </div>
 
-            <div id="button-container">
-                <div class="option">
-                    <button class="btn-choice" id="btn-rock">
-                        ROCK
-                    </button>
-                </div>
-                <div class="option">
-                    <button class="btn-choice" id="btn-paper">
-                        PAPER
-                    </button>
-                </div>
-                <div class="option">
-                    <button class="btn-choice" id="btn-scissors">
-                        SCISSORS
-                    </button>
-                </div>
-                <div class="play-game">
+            <div class="summary">
+                <div id="button-container">
                     <button class="btn-play" id="btn-play">
                         Let's Play!
                     </button>
                 </div>
             </div>
 
-        </div>
+        </section>
+        
     </div>
-<!-- <script src="main.js"></script> -->
+
+    <script src="main.js"></script>
 </body>
 </html>

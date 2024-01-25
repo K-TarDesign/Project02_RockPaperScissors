@@ -18,58 +18,86 @@ h1 {
 
 h2 {
     margin: 0;
+    font-weight: bolder;
+}
+
+h3 {
     text-decoration: underline;
+    margin: 0;
+}
+
+button {
+    background-color: black;
+    border: 2px solid black;
+    margin: 0 0 15px 0;
+    color: beige;
+    font-weight: bold;
 }
 
 /* CLASS SETTING */
+.scoreboard {
+    background-color: black;
+    color: beige;
+    padding: 5px 20px 20px 20px;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.score-box {
+    width: 100px;
+    padding: 10px;
+    background-color: beige;
+    color: black;
+}
+
 .score {
-    font-size: 36px;
-    padding: 0 0 10px 0;
+    font-size: 72px;
 
 }
 
+.play {
+    /* Flexbox Properties*/
+    flex: auto;
+
+    display: flex;
+}
+
+.play div {
+    /* Flexbox Properties */
+    flex: 1;
+}
+
 .round-info {
-    height: 150px;
-    width: 200px;
-    border: 2px solid black;
+    background-color: black;
+    color: beige;
+    height: 125px;
+    width: 225px;
     text-align: center;
 }
 
 .result {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: bold;
-    margin: 30px 0;
-    color: blue;
+    margin: 25px 0;
+    color: lime;
 }
 
 .btn-choice {
     height: 50px;
     width: 100px;
-    border: 2px solid black;
-    font-weight: bold;
     font-size: 16px;
-
-    background-color: black;
-    color: beige;
 }
 
 .btn-play {
     height: 75px;
     width: 175px;
-    border: 2px solid black;
-    font-weight: bold;
     font-size: 24px;
-
-    background-color: black;
-    color: beige;
 }
 
-.option {
-    display: none;
-}
-
-.play-game {
-    display: block;
+.btn-nextRound {
+    width: 75px;
+    height: 50px;
+    font-size: 18px;
 }
 
 /* ID SETTINGS */
@@ -91,21 +119,23 @@ h2 {
 }
 
 
-#menu-column {
+#menu {
     background-color: black;
     color: beige;
     padding: 15px;
     
-
     /* Flexbox Properties */
-    flex: 0 1 200px;
+    flex: 0 0 200px;
 
     display: flex;
     flex-direction: column;
 }
 
 #play-board {
-    
+    background-color: beige;
+    color: black;
+    border: 10px solid black;
+
     /* Flexbox Properties */
     flex: 1;
 
@@ -115,53 +145,52 @@ h2 {
     justify-content: flex-start;
 }
 
-#scoreboard {
-    padding: 0 0 15px 0;
+#score-tally {
+    margin: 10px 0 0 0;
 
-    /* Flex Properties */
-    column-gap:  50px;
-
+    /* Flexbox Properties */
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    gap: 40px;
 }
 
 #contestants {
 
     /* Flex Properties */
-    gap: 30px;
     flex: auto;
 
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
 
 
 #button-container {
-    padding: 15px;
+    padding: 30px 0 0 0;
 
     /* Flexbox Properties */
     align-self: stretch;
+    flex: 0 0 80px;
 
     display: flex;
     justify-content: space-evenly;
+    align-content: center;
 }
 
 
 
-
+/* Narrow Screen Mode */
 
 @media (max-width: 800px) {
     #screen-display {
         flex-direction: column;
     }
 
-    #menu-column {
+    #menu {
         flex-direction: row;
-        flex: 0 0 125px;
-        max-height: 125px;
+        flex: 0 0 115px;
+        max-height: 130px;
     }
 
     #instructions {
