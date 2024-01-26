@@ -1,64 +1,48 @@
 //Variables
 
     //SCOREBOARD
+
     const scoreComp = document.querySelector('#score-computer');
     const scorePlayer = document.querySelector('#score-player');
 
+    let playerScore = 0;
+    let computerScore = 0;
+
 
     //RESULTS
+
     const resultComp = document.querySelector('#computer-result');
     const resultPlayer = document.querySelector('#player-result');
 
-    const resultsRound = btnContainer.createElement('p');
-    const resultsDisplay = btnContainer.createElement('p');
-
+    const message = document.querySelector('#status');
+    
 
     //BUTTONS
-    const btnContainer = document.querySelector('#button-container')
-    
-    const btnPlay = document.querySelector('#btn-play');
 
-    const btnNextRound = document.createElement('button');
-        btnNextRound.classList.add('btn-nextRound');
-        btnNextRound.textContent = 'Next Round';
+    const btnPlay = document.querySelector('#btn-play');
     
     const btnRock = document.createElement('button');
         btnRock.classList.add('btn-choice');
-        btnRock.textContent = 'ROCK'
-    
+        btnRock.textContent = 'ROCK';
+
     const btnPaper = document.createElement('button');
         btnPaper.classList.add('btn-choice');
-        btnPaper.textContent = 'PAPER'
-    
+        btnPaper.textContent = 'PAPER';
+
     const btnScissors = document.createElement('button');
         btnScissors.classList.add('btn-choice');
-        btnScissors.textContent = 'SCISSORS'
+        btnScissors.textContent = 'SCISSORS';
 
-
-    //DISPLAY BLOCKS
-    const blockPlay = document.querySelector('.play-game');
-    const blockOption = document.querySelector('.option');
-    const blockResults = document.querySelector('.next-round');
-
-
-    //Flexible Variables
-    let playerScore = 0;
-    let computerScore = 0;
-    let message;
+    const btnNextRound = document.createElement('button');
+        btnNextRound.classList.add('btn-play');
+        btnNextRound.textContent = 'Next Round';
 
 
 //Event Listeners
 
-//ON LOAD
+    //ON CLICK
+    btnPlay.addEventListener('click', playGame);
 
-
-//INITIATE GAME
-btnPlay.addEventListener('click', playGame);
-btnNextRound.addEventListener('click', playGame);
-
-// btnRock.onclick = playRound('ROCK');
-// btnPaper.onclick = playRound('PAPER');
-// btnScissors.onclick = playRound('SCISSORS');
 
 
 
@@ -67,10 +51,8 @@ btnNextRound.addEventListener('click', playGame);
 
 //PLAY A ROUND
 function playGame() {
-    btnContainer.removeChild(btnPlay);
-    btnContainer.appendChild(btnRock);
-    btnContainer.appendChild(btnPaper);
-    btnContainer.appendChild(btnScissors);
+
+    
 }
 
 
@@ -120,6 +102,8 @@ function playRound(choice) {
 
     resultsRound.textContent = message;
     tallyScore();
+
+    btnNextRound.addEventListener('click', playGame);
 }
 
 function tallyScore() {
