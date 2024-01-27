@@ -1,5 +1,7 @@
 //Variables
 
+    let playerName = document.querySelector('#player-name');
+
     //SCOREBOARD
 
     const scoreComp = document.querySelector('#score-computer');
@@ -16,6 +18,11 @@
 
     const message = document.querySelector('#status');
     
+    
+    //CONTAINERS
+
+    const btnContainer = document.querySelector('button-container');
+
 
     //BUTTONS
 
@@ -41,6 +48,9 @@
 //Event Listeners
 
     //ON CLICK
+    
+    playerName.addEventListener('click', changeName)
+
     btnPlay.addEventListener('click', playGame);
 
 
@@ -50,8 +60,19 @@
 
 
 //PLAY A ROUND
-function playGame() {
 
+function changeName() {
+    let playerName = prompt('Please enter your name.', "Player");
+}
+
+function playGame() {
+    alert('HELLO!!!');
+    
+    btnContainer.removeChild('button');
+    
+    btnContainer.appendChild(btnRock);
+    btnContainer.appendChild(btnPaper);
+    btnContainer.appendChild(btnScissors);
     
 }
 

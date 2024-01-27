@@ -32,6 +32,10 @@ button {
     font-weight: bold;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* CLASS SETTING */
 .scoreboard {
     background-color: black;
