@@ -1,7 +1,5 @@
 //Variables
 
-    let playerName = document.querySelector('#player-name');
-
     //SCOREBOARD
 
     const scoreComp = document.querySelector('#score-computer');
@@ -21,8 +19,10 @@
     
     //CONTAINERS
 
-    const btnContainer = document.querySelector('button-container');
+    const btnContainer = document.querySelector('#button-container');
 
+    const scoreBoxComp = document.querySelector('#compBox');
+    const scoreBoxPlayer = document.querySelector('#playerBox');
 
     //BUTTONS
 
@@ -41,43 +41,69 @@
         btnScissors.textContent = 'SCISSORS';
 
     const btnNextRound = document.createElement('button');
-        btnNextRound.classList.add('btn-play');
+        btnNextRound.classList.add('btn-nextRound');
         btnNextRound.textContent = 'Next Round';
+
+    const btnPlayAgain = document.createElement('button');
+        btnPlayAgain.classList.add('btn-nextRound');
+        btnPlayAgain.textContent = 'Play Again';
 
 
 //Event Listeners
 
     //ON CLICK
     
-    playerName.addEventListener('click', changeName)
+    btnPlay.addEventListener('click', () => {playGame(btnPlay)});
 
-    btnPlay.addEventListener('click', playGame);
+    btnRock.addEventListener('click', () => {playRound('ROCK')});
+    btnPaper.addEventListener('click', () => {playRound('PAPER')});
+    btnScissors.addEventListener('click', () => {playRound('SCISSORS')});
 
+    btnNextRound.addEventListener('click', () => {playGame(btnNextRound)});
+    
+    btnPlayAgain.addEventListener('click', () => {playGame(btnPlayAgain)});
+    btnPlayAgain.addEventListener('click', resetGame);
 
 
 
 //Functions
 
-
-//PLAY A ROUND
-
-function changeName() {
-    let playerName = prompt('Please enter your name.', "Player");
-}
-
-function playGame() {
-    alert('HELLO!!!');
+function playGame(button) {
     
-    btnContainer.removeChild('button');
+    btnContainer.removeChild(button);
     
+    message.textContent = "Select Rock, Paper, or Scissors"
+
     btnContainer.appendChild(btnRock);
     btnContainer.appendChild(btnPaper);
     btnContainer.appendChild(btnScissors);
     
 }
 
+function nextRound() {
 
-function playRound(choice) {
+    btnContainer.removeChild(btnRock);
+    btnContainer.removeChild(btnPaper);
+    btnContainer.removeChild(btnScissors);
+
+    btnContainer.appendChild(btnNextRound);
+
+}
+
+function resetGame() {
+
+    scoreBoxComp.classList.remove('winner');
+    scoreBoxPlayer.classList.remove('winner');
+
+    computerScore = 0
+    playerScore = 0
+
+    scoreComp.textContent = "0"
+    scorePlayer.textContent = "0"
+}
+
+
+function playRound (choice) {
     let options = ['ROCK', 'PAPER', 'SCISSORS'];
     let choiceComp = options[Math.floor(Math.random() * options.length)];
 
@@ -87,44 +113,43 @@ function playRound(choice) {
     switch (choice) {
 
         case choiceComp:
-            message = "It's a tie! No points awarded.";
+            message.textContent = "It's a tie! No points awarded.";
             break;
 
         case "ROCK":
-            if (computer === "PAPER") {
+            if (choiceComp === "PAPER") {
                 ++computerScore;
-                message = "Paper beats rock! The computer wins!";
+                message.textContent = "Paper beats rock! The computer wins!";
             } else {
                 ++playerScore;
-                message = "Rock beats scissors! You win!";
+                message.textContent = "Rock beats scissors! You win!";
             }
             break;
 
         case "PAPER":
-            if (computer === "SCISSORS") {
+            if (choiceComp === "SCISSORS") {
                 ++computerScore;
-                message = "Scissors beats paper! The computer wins!";
+                message.textContent = "Scissors beats paper! The computer wins!";
             } else {
                 ++playerScore;
-                message = "Paper beats rock! You win!";
+                message.textContent = "Paper beats rock! You win!";
             }
             break;
 
         case "SCISSORS":
-            if (computer === "ROCK") {
+            if (choiceComp === "ROCK") {
                 ++computerScore;
-                message = "Rock beats scissors! The computer wins!";
+                message.textContent = "Rock beats scissors! The computer wins!";
             } else {
                 ++playerScore;
-                message = "Scissors beats paper! You win!";
+                message.textContent = "Scissors beats paper! You win!";
             }
             break;
     }
 
-    resultsRound.textContent = message;
     tallyScore();
+    nextRound();
 
-    btnNextRound.addEventListener('click', playGame);
 }
 
 function tallyScore() {
@@ -132,14 +157,20 @@ function tallyScore() {
     scorePlayer.textContent = playerScore;
 
     if (computerScore === 5 || playerScore === 5) {
-        computerScore === 5 ? 
-            message = "Game over! The computer won the game!" :
-            message = "Congratulations! You won the game!!!" ;
-            resultsRound.removeChild(btnNextRound);
-    } else {
-        btnContainer.appendChild(resultsRound);
-        btnContainer.appendChild(btnNextRound);
+
+        if (computerScore === 5) {
+            scoreBoxComp.classList.add('winner');
+            message.textContent = "Game over! The computer won the game!";
+        } else {
+            scoreBoxPlayer.classList.add('winner');
+            message.textContent = "Congratulations! You won the game!!!" ;
+        }
+
+        btnContainer.removeChild(btnRock);
+        btnContainer.removeChild(btnPaper);
+        btnContainer.removeChild(btnScissors);
+
+        btnContainer.appendChild(btnPlayAgain);
     }
 
 }
-
