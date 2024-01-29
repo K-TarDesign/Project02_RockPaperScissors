@@ -7,7 +7,7 @@
     
     <title>Rock, Paper, Scissors</title>
 </head>
-<body>
+<body onload="addName()">
     <div id="screen-display">
         
         <section id="menu">
@@ -39,15 +39,22 @@
                     <div><h2>SCOREBOARD</h2></div>
                 <div id="scoreboard">
                     <div id="score-tally">
-                        <div class="score-box" id="compBox">
+                        <div class="score-box" id="comp-box">
                             <h3>Computer</h3>
                             <div class="score" id="score-computer">0</div>
                         </div>
-                        <div class="score-box" id="playerBox">
-                            <h3 class="player-name">Player</h3>
+                        <div class="score-box" id="player-box">
+                            <h3 id="name-score">Player</h3>
                             <div class="score" id="score-player">0</div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3 id="status"></h3>
+                <div id="button-container">
+                    <button class="btn-play" id="btn-play">Lets Play!</button>
                 </div>
             </div>
 
@@ -58,16 +65,9 @@
                         <div class="result" id="computer-result"></div>
                     </div>
                     <div class="round-info">
-                        <h2 class="player-name">PLAYER</h2>
+                        <h2 id="name-action">PLAYER</h2>
                         <div class="result" id="player-result"></div>
                     </div>
-                </div>
-            </div>
-
-            <div class="summary">
-                <h3 id="status"></h3>
-                <div id="button-container">
-                    <button class="btn-play" id="btn-play">Lets Play!</button>
                 </div>
             </div>
 

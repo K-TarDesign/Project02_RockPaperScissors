@@ -41,6 +41,7 @@ button:hover {
     background-color: black;
     color: beige;
     padding: 5px 20px 20px 20px;
+    margin: 0 0 15px 0;
     text-align: center;
 }
 
@@ -171,14 +172,12 @@ button:hover {
 }
 
 #contestants {
-    margin: 15px;
 
     /* Flex Properties */
     flex: auto;
 
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 30px;
 }
 

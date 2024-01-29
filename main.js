@@ -19,10 +19,13 @@
     
     //CONTAINERS
 
+    const playerNameScore = document.querySelector('#name-score');
+    const playerNameAction = document.querySelector('#name-action');
+
     const btnContainer = document.querySelector('#button-container');
 
-    const scoreBoxComp = document.querySelector('#compBox');
-    const scoreBoxPlayer = document.querySelector('#playerBox');
+    const scoreBoxComp = document.querySelector('#comp-box');
+    const scoreBoxPlayer = document.querySelector('#player-box');
 
     //BUTTONS
 
@@ -68,11 +71,18 @@
 
 //Functions
 
+function addName() {
+    let playerName = prompt("What is your name?", "Player");
+    playerNameScore.textContent = playerName;
+    playerNameAction.textContent = playerName.toUpperCase();
+
+}
+
 function playGame(button) {
     
     btnContainer.removeChild(button);
     
-    message.textContent = "Select Rock, Paper, or Scissors"
+    message.textContent = "Select Rock, Paper, or Scissors";
 
     btnContainer.appendChild(btnRock);
     btnContainer.appendChild(btnPaper);
