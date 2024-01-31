@@ -56,6 +56,7 @@
 
     //ON CLICK
     
+    btnPlay.addEventListener('click', addName)
     btnPlay.addEventListener('click', () => {playGame(btnPlay)});
 
     btnRock.addEventListener('click', () => {playRound('ROCK')});
@@ -87,6 +88,9 @@ function playGame(button) {
     btnContainer.appendChild(btnRock);
     btnContainer.appendChild(btnPaper);
     btnContainer.appendChild(btnScissors);
+
+    resultComp.textContent = "";
+    resultPlayer.textContent = "";
     
 }
 
@@ -105,11 +109,15 @@ function resetGame() {
     scoreBoxComp.classList.remove('winner');
     scoreBoxPlayer.classList.remove('winner');
 
-    computerScore = 0
-    playerScore = 0
+    computerScore = 0;
+    playerScore = 0;
 
-    scoreComp.textContent = "0"
-    scorePlayer.textContent = "0"
+    scoreComp.textContent = "0";
+    scorePlayer.textContent = "0";
+
+    resultComp.textContent = "";
+    resultPlayer.textContent = "";
+
 }
 
 
